@@ -25,16 +25,15 @@ def index():
             if tok.type in counts:
                 counts[tok.type] += 1
 
-        # Calcular recuentos por columna
         for token in tokens:
             if token.type in ['FOR', 'VAR', 'CONSOLE', 'LOG', 'GLOBAL']:
-                counts['reserved'] += 1  # Incrementar el contador de palabras reservadas
+                counts['reserved'] += 1 
             elif token.type == 'ID':
                 counts['id'] += 1
             elif token.type == 'NUMBER':
                 counts['number'] += 1
             elif token.type in ['PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'ASSIGN', 'LT', 'LE', 'GT', 'GE', 'EQ', 'NE', 'DOT', 'SEMICOLON', 'COMMA', 'SINGLE_QUOTE']:
-                counts['symbol'] += 1  # Incrementar el contador de símbolos
+                counts['symbol'] += 1 
             elif token.type == 'LPAREN':
                 counts['lparen'] += 1
             elif token.type == 'RPAREN':

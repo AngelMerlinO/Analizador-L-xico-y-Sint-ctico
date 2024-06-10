@@ -1,7 +1,6 @@
 import ply.yacc as yacc
 from lexer import tokens
 
-# Definición de la gramática
 def p_program(p):
     '''program : for_loop console_statement'''
     p[0] = "La estructura del código está bien."
@@ -33,10 +32,8 @@ def p_error(p):
     else:
         raise SyntaxError("Error de sintaxis al final del archivo. Falta una llave de cierre o punto y coma.")
 
-# Construir el parser
 parser = yacc.yacc()
 
-# Función para analizar el código
 def parse_code(code):
     try:
         result = parser.parse(code)
